@@ -5,6 +5,9 @@ import { answerState } from "../atom/answer";
 import { chordQuizState } from "../atom/quiz";
 import { getRandomChord } from "../lib/music";
 
+// ["C", "F", "Bb", "Eb", "Ab", "Db", "F#", "B", "E", "A", "D", "G"]
+// ["maj7", "m7", "7", "dim7", "m7b5"]
+
 enum QuizStatus {
   NORMAL,
   SUCCESS,
