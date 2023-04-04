@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "musictype-regular-webfont";
+  src: url("../public/font/musictype-regular-webfont.woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+.music-text {
+  font-family: musictype-regular-webfont;
+}
+.btn {
+  text-transform: Capitalize !important;
+}
