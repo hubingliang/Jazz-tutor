@@ -62,41 +62,44 @@ export const Quiz = memo(() => {
       <h1 className="text-6xl font-bold music-text text-center">
         {chordQuiz.symbol}
       </h1>
-
-      <div className="card bg-base-100 flex-1 my-2">
-        <div className="card-body items-center text-center">
-          {needShowHint && (
-            <div className="flex">
-              {chordQuiz.notes.map((note, i) => (
-                <div className="indicator" key={note}>
-                  <span className="indicator-item indicator-center indicator-bottom badge badge-primary">
-                    {chordQuiz.intervals[i]}
-                  </span>
-                  <kbd className="kbd music-text text-3xl bg-green-100">{note}</kbd>
-                </div>
-              ))}
-            </div>
-          )}
+      <div className="flex flex-col justify-between flex-1 py-4">
+        <div className="card bg-base-100">
+          <div className="card-body items-center text-center py-2">
+            {needShowHint && (
+              <div className="flex">
+                {chordQuiz.notes.map((note, i) => (
+                  <div className="indicator" key={note}>
+                    <span className="indicator-item indicator-center indicator-bottom badge badge-primary">
+                      {chordQuiz.intervals[i]}
+                    </span>
+                    <kbd className="kbd music-text text-3xl bg-green-100">
+                      {note}
+                    </kbd>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="card bg-base-100 shadow-xl my-4 mb-10">
-        <div className="card-body items-center text-center">
-          <h1 className="text-3xl music-text text-center h-[66px] flex">
-            {answer.map((note, i) => (
-              <kbd
-                className={`kbd ${
-                  quizStatus === QuizStatus.SUCCESS
-                    ? "bg-green-100"
-                    : quizStatus === QuizStatus.FAILURE
-                    ? "bg-red-100"
-                    : ""
-                }`}
-                key={i}
-              >
-                {note}
-              </kbd>
-            ))}
-          </h1>
+        <div className="card bg-base-100 shadow-xl">
+          <div className="card-body items-center text-center py-2">
+            <h1 className="text-3xl music-text text-center h-[66px] flex">
+              {answer.map((note, i) => (
+                <kbd
+                  className={`kbd music-text ${
+                    quizStatus === QuizStatus.SUCCESS
+                      ? "bg-green-100"
+                      : quizStatus === QuizStatus.FAILURE
+                      ? "bg-red-100"
+                      : ""
+                  }`}
+                  key={i}
+                >
+                  {note}
+                </kbd>
+              ))}
+            </h1>
+          </div>
         </div>
       </div>
     </div>
