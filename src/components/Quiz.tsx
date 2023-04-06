@@ -72,7 +72,7 @@ export const Quiz = memo(() => {
                   <span className="indicator-item indicator-center indicator-bottom badge badge-primary">
                     {chordQuiz.intervals[i]}
                   </span>
-                  <kbd className="kbd text-3xl bg-green-100">{note}</kbd>
+                  <kbd className="kbd music-text text-3xl bg-green-100">{note}</kbd>
                 </div>
               ))}
             </div>
