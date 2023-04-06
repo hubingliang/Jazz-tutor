@@ -62,7 +62,7 @@ export const Quiz = memo(() => {
       <h1 className="text-6xl font-bold music-text text-center">
         {chordQuiz.symbol}
       </h1>
-      <div className="flex flex-col justify-between flex-1 py-4">
+      <div className="flex flex-col justify-around flex-1">
         <div className="card bg-base-100">
           <div className="card-body items-center text-center py-2">
             {needShowHint && (
