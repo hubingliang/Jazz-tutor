@@ -82,7 +82,7 @@ export const Quiz = memo(() => {
           </div>
         </div>
         <div className="card bg-base-100 shadow-xl">
-          <div className="card-body items-center text-center py-2">
+          <div className="card-body items-center text-center">
             <h1 className="text-3xl music-text text-center h-[66px] flex">
               {answer.map((note, i) => (
                 <kbd
