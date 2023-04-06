@@ -5,7 +5,7 @@ export const Menu = ({ children }: { children: ReactElement }) => {
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        <div className="w-full navbar bg-base-200">
+        <div className="w-full navbar bg-base-100 shadow-lg">
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
               <svg
