@@ -47,7 +47,7 @@ export const NoteKeyboard = () => {
   const setAnswer = useSetRecoilState(answerState);
 
   return (
-    <div className="h-[160px] overflow-scroll">
+    <div className="h-[160px] overflow-scroll rounded-md">
       <div className="grid grid-cols-7 gap-1 grid-rows-5 max-w-2xl mx-auto">
         {notes.map((note) => {
           const [col, row] = notePositionMap[note];
