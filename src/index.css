@@ -3,7 +3,7 @@
 @tailwind utilities;
 @font-face {
   font-family: "musictype-regular-webfont";
-  src: url("../public/font/musictype-regular-webfont.woff");
+  src: url("/font/musictype-regular-webfont.woff");
   font-weight: normal;
   font-style: italic;
 }
