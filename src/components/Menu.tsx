@@ -35,8 +35,8 @@ export const Menu = ({ children }: { children: ReactElement }) => {
             className="countdown absolute top-1/2 lg:left-1/2 right-1 lg:right-auto transform -translate-x-1/2 -translate-y-1/2"
             onClick={() => setScore({ total: 0, success: 0 })}
           >
-            <span style={{ "--value": score.success }}></span>/
-            <span style={{ "--value": score.total }}></span>
+            <span style={{ "--value": score.success } as any}></span>/
+            <span style={{ "--value": score.total } as any}></span>
           </span>
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
