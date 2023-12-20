@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <RecoilRoot>
       <Menu>
         <RouterProvider router={router}></RouterProvider>
-        {/* <App /> */}
       </Menu>
     </RecoilRoot>
   </React.StrictMode>
