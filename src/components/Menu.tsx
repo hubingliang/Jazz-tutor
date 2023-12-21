@@ -5,6 +5,7 @@ import { Outlet, Link } from "react-router-dom";
 
 export const Menu = ({ children }: { children: ReactElement }) => {
   const [score, setScore] = useRecoilState(scoreState);
+  console.log("score: ", score);
   const pathname = useMemo(() => location.pathname, [location.pathname]);
   return (
     <div className="drawer">
@@ -32,6 +33,7 @@ export const Menu = ({ children }: { children: ReactElement }) => {
           <div className="flex-1 px-2 mx-2">Jazz Tutor</div>
 
           <div className="mr-4">{`${score.success}/${score.total}`}</div>
+          <div>{((score.success / score.total || 0) * 100).toFixed(2)}%</div>
 
           <div className="flex-none hidden lg:block">
             <ul className="menu menu-horizontal">
