@@ -38,14 +38,18 @@ function Card() {
 
   const ireaproUrl = useMemo(() => {
     const ireaproContent = randomData.chords
-      .map((note) => {
-        return note + randomData.chordType;
+      .map((note, index) => {
+        const bar = index === 0 ? "[" : index % 4 === 0 ? "[" : "|";
+        //  index % 4 === 0 ? "[" : "|";
+        return bar + note + randomData.chordType;
       })
-      .join("|");
+      .join("");
     return `irealbook://${moment().format(
       "D-MM-YYYY"
     )}=Tutor Jazz=Medium Swing=C=n=T44*A${ireaproContent}Z`;
   }, [randomData]);
+  console.log("ireaproUrl: ", ireaproUrl);
+
   return (
     <div className="container h-full mx-auto p-4 py-8 overflow-x-hidden bg-base-100">
       <RandomCard
