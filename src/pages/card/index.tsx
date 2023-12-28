@@ -12,8 +12,8 @@ import {
   MUSIC_TIMES,
 } from "@/constants/music";
 import _ from "lodash";
-import dayjs from "dayjs";
 import { Chord } from "tonal";
+import moment from "moment";
 
 function Card() {
   const [randomData, setRandomData] = useRecoilState(randomState);
@@ -42,8 +42,8 @@ function Card() {
         return note + randomData.chordType;
       })
       .join("|");
-    return `irealbook://${dayjs().format(
-      "DD/MM/YYYY"
+    return `irealbook://${moment().format(
+      "D-MM-YYYY"
     )}=Tutor Jazz=Medium Swing=C=n=T44*A${ireaproContent}Z`;
   }, [randomData]);
   return (
