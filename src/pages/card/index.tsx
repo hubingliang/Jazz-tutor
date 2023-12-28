@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { NoteKeyboard } from "@/components/NoteKeyboard";
 import { Quiz } from "@/components/Quiz";
 import { useSelections } from "ahooks";
@@ -35,12 +35,17 @@ function Card() {
       chordType: randomChordType,
     });
   };
-  const ireaproContent = randomData.chords
-    .map((note) => {
-      return note + randomData.chordType;
-    })
-    .join("|");
 
+  const ireaproUrl = useMemo(() => {
+    const ireaproContent = randomData.chords
+      .map((note) => {
+        return note + randomData.chordType;
+      })
+      .join("|");
+    return `irealbook://${dayjs().format(
+      "DD/MM/YYYY"
+    )}=Tutor Jazz=Medium Swing=C=n=T44*A${ireaproContent}Z`;
+  }, [randomData]);
   return (
     <div className="container h-full mx-auto p-4 py-8 overflow-x-hidden bg-base-100">
       <RandomCard
@@ -84,12 +89,7 @@ function Card() {
           </svg>
           Random
         </button>
-        <a
-          className="btn btn-accent"
-          href={`irealbook://${dayjs().format(
-            "DD/MM/YYYY"
-          )}=Tutor Jazz=Medium Swing=C=n=T44*A${ireaproContent}Z`}
-        >
+        <a className="btn btn-accent" href={ireaproUrl}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
