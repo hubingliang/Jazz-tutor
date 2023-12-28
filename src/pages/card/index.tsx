@@ -43,7 +43,7 @@ function Card() {
         //  index % 4 === 0 ? "[" : "|";
         return bar + note + randomData.chordType;
       })
-      .join("");
+      .join(" ");
     return `irealbook://${moment().format(
       "D-MM-YYYY"
     )}=Tutor Jazz=Medium Swing=C=n=T44*A${ireaproContent}Z`;
