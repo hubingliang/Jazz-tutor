@@ -12,7 +12,7 @@ import {
   MUSIC_TIMES,
 } from "@/constants/music";
 import _ from "lodash";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { Chord } from "tonal";
 
 function Card() {
