@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Chord from "@/pages/chord";
+import Card from "@/pages/card";
 import "./index.css";
 import { RecoilRoot } from "recoil";
 import { Menu } from "./components/Menu";
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/chord",
     element: <Chord></Chord>,
+  },
+  {
+    path: "/card",
+    element: <Card></Card>,
   },
   {
     path: "/",
