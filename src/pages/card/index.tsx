@@ -39,14 +39,12 @@ function Card() {
   const ireaproUrl = useMemo(() => {
     const ireaproContent = randomData.chords
       .map((note, index) => {
-        const bar = index === 0 ? "[" : index % 4 === 0 ? "[" : "|";
-        //  index % 4 === 0 ? "[" : "|";
-        return bar + note + randomData.chordType;
+        return note + randomData.chordType;
       })
-      .join(" ");
+      .join(" |");
     return `irealbook://${moment().format(
       "D-MM-YYYY"
-    )}=Tutor Jazz=Medium Swing=C=n=T44*A${ireaproContent}Z`;
+    )}=Tutor Jazz=Medium Swing=C=n=T44*A[${ireaproContent}Z`;
   }, [randomData]);
   console.log("ireaproUrl: ", ireaproUrl);
 
