@@ -39,8 +39,8 @@ function Card() {
   const ireaproUrl = useMemo(() => {
     const ireaproContent = randomData.chords
       .map((note, index) => {
-        const bar = index % 3 === 0 ? " |" : "";
-        return note + randomData.chordType + bar;
+        const bar = index % 4 === 0 ? " |" : "";
+        return bar + note + randomData.chordType;
       })
       .join(" |");
     return `irealbook://${moment().format(
