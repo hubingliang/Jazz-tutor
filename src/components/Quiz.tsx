@@ -25,7 +25,7 @@ export const Quiz = memo(() => {
   const [quizStatus, setQuizStatus] = useState<QuizStatus>(QuizStatus.NORMAL);
   const shuffleSort = useMemo(() => {
     return shuffle ? _.shuffle([0, 1, 2, 3]) : [0, 1, 2, 3];
-  }, [shuffle]);
+  }, [shuffle, chordQuiz]);
   const checkAnswer = useCallback(
     (answer: string[]) => {
       if (_.every(answer, Boolean)) {
@@ -72,12 +72,6 @@ export const Quiz = memo(() => {
   }, [answer, checkAnswer]);
   return (
     <div className="flex flex-col">
-      {/* <div className="card bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">Jazz tutor</h2>
-          <p>Jazz up your music theory skills with us!</p>
-        </div>
-      </div> */}
       <h1 className="text-6xl font-bold music-text text-center mb-4">
         {chordQuiz.symbol}
       </h1>
