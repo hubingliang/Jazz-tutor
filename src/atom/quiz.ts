@@ -9,6 +9,6 @@ export const chordQuizState = atom({
 export const chordQuizSettingState = atom({
   key: "chordQuizSettingState",
   default: {
-    shuffle: false,
+    shuffle: true,
   },
 });

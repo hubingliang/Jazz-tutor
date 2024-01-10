@@ -92,7 +92,7 @@ export const Quiz = memo(() => {
                       {chordQuiz.intervals[shuffleSort[i]]}
                     </span>
                     <kbd className="kbd music-text text-3xl bg-green-100">
-                      {note}
+                      {chordQuiz.notes[shuffleSort[i]]}
                     </kbd>
                   </div>
                 ))}
