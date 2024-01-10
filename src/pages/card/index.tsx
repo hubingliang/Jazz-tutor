@@ -39,13 +39,12 @@ function Card() {
   const ireaproUrl = useMemo(() => {
     const ireaproContent = randomData.chords
       .map((note, index) => {
-        const bar = index % 4 === 0 ? " |" : "";
-        return bar + note + randomData.chordType;
+        return note + randomData.chordType;
       })
-      .join(" |");
+      .join("   |");
     return `irealbook://${moment().format(
       "D-MM-YYYY"
-    )}=Tutor Jazz=Medium Swing=C=n=T44*A[${ireaproContent} Z`;
+    )}=Tutor Jazz=Medium Swing=C=n=T44[${ireaproContent}   Z`;
   }, [randomData]);
   console.log("ireaproUrl: ", ireaproUrl);
 
@@ -74,9 +73,7 @@ function Card() {
         configKey="chordTypes"
         value={randomData.chordType}
       ></RandomCard>
-      <a href="irealbook://A Walkin Thing=Carter Benny=Medium Swing=D-=n={*AT44D- D-/C |Bh7, Bb7(A7b9) |D-/A G-7 |D-/F sEh,A7,|Y|lD- D-/C |Bh7, Bb7(A7b9) |D-/A G-7 |N1D-/F sEh,A7} Y|N2sD-,G-,lD- ][*BC-7 F7 |Bb^7 |C-7 F7 |Bb^7 n ||C-7 F7 |Bb^7 |B-7 E7 |A7,p,p,p,][*AD- D-/C |Bh7, Bb7(A7b9) |D-/A G-7 |D-/F sEh,A7,||lD- D-/C |Bh7, Bb7(A7b9) |D-/A G-7 |D-/F sEh,A7Z">
-        A Walkin Thing
-      </a>
+
       <div className="absolute bottom-4 right-4">
         <button className="btn btn-primary mr-2" onClick={random}>
           <svg
